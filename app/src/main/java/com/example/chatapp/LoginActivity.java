@@ -1,10 +1,6 @@
   package com.example.chatapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import android.content.Intent;
+  import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -12,6 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -25,7 +25,10 @@ import com.google.firebase.auth.FirebaseAuth;
       FirebaseAuth auth;
       TextView forgot_password;
 
-    @Override
+
+
+
+      @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
@@ -34,6 +37,10 @@ import com.google.firebase.auth.FirebaseAuth;
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Login");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
+
 
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
@@ -49,11 +56,17 @@ import com.google.firebase.auth.FirebaseAuth;
 
         auth = FirebaseAuth.getInstance();
 
+
+
+
         btn_lgn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String txt_email = email.getText().toString();
                 String txt_password = password.getText().toString();
+
+
+
                 if ( TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password))
                 {
                     Toast.makeText(LoginActivity.this, "All Feilds Are Required !", Toast.LENGTH_SHORT);
